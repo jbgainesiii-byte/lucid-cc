@@ -1,93 +1,42 @@
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Lucid Customer Care — Customer Service Week 2025</title>
+
+  <!-- Tailwind CDN (primary styles) -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+  <!-- Minimal fallback styles so content shows even if Tailwind fails -->
   <style>
     :root{
-      --bg:#0b0b0d;       /* near-black */
-      --panel:#141418;    /* panels */
-      --line:#24242a;     /* hairlines */
-      --muted:#9ca3af;    /* secondary text */
-      --accent:#a5b4fc;   /* soft indigo accent */
-      --accent-2:#38bdf8; /* cyan accent (sparingly) */
-      --text:#f5f7fa;     /* off-white */
+      --bg:#0b0b0d; --panel:#141418; --line:#24242a; --muted:#9ca3af; --text:#f5f7fa;
+      --accent:#a5b4fc;
     }
     html,body{height:100%}
-    body{
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
-      background: var(--bg);
-      color: var(--text);
+    body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif}
+    /* Fallback layout if Tailwind doesn't load */
+    .fallback-container{max-width:72rem;margin-inline:auto;padding:1.25rem}
+    .fallback-hero{padding:5rem 1rem;text-align:center;background:
+      radial-gradient(1000px 600px at 80% -20%, rgba(165,180,252,.12) 0%, rgba(165,180,252,0) 60%),
+      linear-gradient(to bottom, rgba(11,11,13,0.00) 0%, rgba(11,11,13,0.75) 60%, rgba(11,11,13,1) 100%)
     }
-    /* Subtle hero texture */
-    .hero-bg{
-      background:
-        radial-gradient(1000px 600px at 80% -20%, rgba(165,180,252,.12) 0%, rgba(165,180,252,0) 60%),
-        linear-gradient(to bottom, rgba(11,11,13,0.00) 0%, rgba(11,11,13,0.75) 60%, rgba(11,11,13,1) 100%),
-        repeating-linear-gradient(0deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 2px);
-    }
-    .brand-wordmark{
-      letter-spacing:.38em;
-      font-weight:700;
-    }
-    .ring-soft{ box-shadow: 0 0 0 1px var(--line) inset; }
-    .card{
-      background: var(--panel);
-      border-radius: .9rem;
-      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-      box-shadow: 0 1px 0 0 rgba(255,255,255,0.03) inset, 0 10px 30px rgba(0,0,0,.35);
-      border: 1px solid var(--line);
-    }
-    .card:hover{
-      transform: translateY(-4px);
-      box-shadow: 0 16px 40px rgba(0,0,0,.45);
-      border-color: rgba(165,180,252,.35);
-    }
-    .chip{
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.02);
-      border-radius: 999px;
-      padding: .35rem .7rem;
-      font-size: .75rem;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      display: inline-flex;
-      gap:.5rem;
-      align-items:center;
-    }
-    .countbox{
-      background: rgba(255,255,255,.03);
-      border: 1px solid var(--line);
-      border-radius: .75rem;
-      padding: .9rem .75rem;
-      min-width: 72px;
-    }
-    .k{ font-weight:800; font-size: clamp(1.75rem, 4vw, 3rem); line-height: 1; }
-    .klabel{ font-size:.7rem; letter-spacing:.12em; color:var(--muted); text-transform:uppercase }
-    .divider{ height:1px; background: linear-gradient(to right, transparent, var(--line), transparent); }
+    .fallback-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1rem}
+    .divider{height:1px;background:linear-gradient(to right,transparent,var(--line),transparent)}
+    .brand-wordmark{letter-spacing:.38em;font-weight:700}
+    .chip{border:1px solid var(--line);border-radius:999px;padding:.35rem .7rem;font-size:.75rem;color:var(--muted)}
     @media (prefers-reduced-motion: reduce){
-      *{ animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+      *{animation-duration:.001ms !important;transition-duration:.001ms !important}
     }
   </style>
 </head>
 <body class="antialiased selection:bg-white/10 selection:text-white">
+
   <!-- Header -->
   <header class="border-b border-[var(--line)]">
-    <div class="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
-      <!-- Logo block: use your official asset if you have it -->
-      <div class="flex items-center gap-3">
-        <!-- If you have a Lucid wordmark file, drop it here -->
-        <!-- Example: <img src="/assets/lucid-wordmark.svg" alt="Lucid Motors" class="h-5"> -->
-        <!-- Fallback text wordmark (keeps things compliant visually without shipping trademark paths) -->
-        <span aria-label="Lucid Motors wordmark" class="brand-wordmark text-sm tracking-[0.38em]">LUCID</span>
-        <span class="sr-only">Customer Care</span>
-        <div class="h-4 w-px bg-[var(--line)] mx-1"></div>
-        <span class="text-sm text-[var(--muted)]">Customer Care</span>
-      </div>
+    <div class="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between fallback-container">
+      <div class="
 
-      <div class="flex items-center gap-2">
-        <span class="chip">Customer Service Week</span>
-        <span class="ch
+      
+      
