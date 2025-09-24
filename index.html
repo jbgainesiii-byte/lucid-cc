@@ -1,291 +1,219 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Customer Service Week — Beach Board</title>
-<style>
-  /* ====== Theme (No external libs) ====== */
-  :root{
-    --sky:#7dd3fc;        /* bright sky */
-    --sea:#22d3ee;        /* aqua */
-    --deep:#0ea5e9;       /* deep water */
-    --sand:#fde68a;       /* sand */
-    --sun:#facc15;        /* sun */
-    --leaf:#10b981;       /* palm leaves */
-    --trunk:#b45309;      /* palm trunk */
-    --ink:#0b1220;        /* text on bright */
-    --card:#ffffff;
-    --muted:#475569;
-  }
-  *{box-sizing:border-box}
-  html,body{height:100%}
-  body{
-    margin:0;
-    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    color:var(--ink);
-    background:
-      radial-gradient(800px 500px at 80% -10%, rgba(255,255,255,.45) 0%, rgba(255,255,255,0) 65%),
-      linear-gradient(180deg, var(--sky) 0%, #bde6ff 35%, var(--sea) 70%, var(--sand) 100%);
-  }
-  .container{max-width:1200px;margin:0 auto;padding:16px 20px 120px}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lucid Customer Care — Customer Service Week 2025</title>
+  <style>
+    /* === Minimal, dependency-free styles === */
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: #0b0b0d; /* near-black */
+      color: #f5f7fa;      /* off-white */
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    .header {
+      border-bottom: 1px solid #24242a;
+      padding: 14px 0;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .wordmark { letter-spacing: .38em; font-weight: 700; font-size: 12px; }
+    .rule { width: 1px; height: 16px; background: #24242a; }
+    .sub { color: #9ca3af; font-size: 12px; }
+    .chip {
+      display: inline-block; border: 1px solid #24242a; border-radius: 999px;
+      padding: 6px 10px; color: #9ca3af; font-size: 12px;
+    }
 
-  /* Header strip */
-  .header{
-    display:flex;align-items:center;justify-content:space-between;gap:12px;
-    padding:10px 14px;margin:8px auto 12px;background:rgba(255,255,255,.55);
-    backdrop-filter:saturate(140%) blur(6px); border-radius:14px; border:1px solid rgba(0,0,0,.06)
-  }
-  .brand{display:flex;align-items:center;gap:10px}
-  .wordmark{letter-spacing:.35em;font-weight:800;font-size:14px}
-  .chip{font-size:12px;border:1px solid rgba(0,0,0,.1);padding:6px 10px;border-radius:999px;background:#fff}
+    .hero {
+      text-align: center;
+      padding: 72px 0 64px;
+      background:
+        radial-gradient(1000px 600px at 80% -20%, rgba(165,180,252,.12) 0%, rgba(165,180,252,0) 60%),
+        linear-gradient(to bottom, rgba(11,11,13,0) 0%, rgba(11,11,13,.75) 60%, rgba(11,11,13,1) 100%);
+      /* This ensures content is ALWAYS visible even if gradients fail */
+      min-height: 60vh; display: flex; align-items: center; justify-content: center;
+    }
+    .hero h1 { margin: 0 0 8px; font-size: clamp(32px, 6vw, 56px); font-weight: 900; }
+    .hero p { margin: 0; color: #9ca3af; font-size: 18px; }
 
-  /* Sun */
-  .sun{
-    position:fixed; right:6vw; top:4vh; width:120px; height:120px; border-radius:50%;
-    background:radial-gradient(circle at 35% 35%, #fff 0 20%, var(--sun) 21% 70%, #f59e0b 71% 100%);
-    box-shadow:0 0 80px 20px rgba(250,204,21,.45);
-    z-index:-1;
-  }
+    .count { margin-top: 28px; display: inline-flex; gap: 12px; }
+    .countbox {
+      background: rgba(255,255,255,.03);
+      border: 1px solid #24242a;
+      border-radius: 12px;
+      min-width: 84px; padding: 12px 10px; text-align: center;
+    }
+    .k    { font-weight: 800; font-size: clamp(24px, 4vw, 40px); line-height: 1; }
+    .klab { margin-top: 4px; color: #9ca3af; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
 
-  /* Simple palms (SVG) */
-  .palms{
-    position:fixed; left:0; bottom:0; width:100%; height:200px; pointer-events:none; z-index:-1;
-    background:
-      linear-gradient(to top, rgba(253,230,138,1) 0%, rgba(253,230,138,0) 70%),
-      url('data:image/svg+xml;utf8,\
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox=\"0 0 1200 200\">\
-        <g fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\
-          <path d=\"M150 200 C170 150 170 120 170 60\" stroke=\"%23b45309\" stroke-width=\"8\"/>\
-          <path d=\"M170 60 c-20 -30 -60 -35 -85 -10 M170 60 c25 -25 65 -22 90 5 M170 60 c-5 -35 20 -60 55 -70 M170 60 c0 -40 -25 -65 -55 -75\" stroke=\"%2310b981\" stroke-width=\"10\"/>\
-          <path d=\"M980 200 C1000 150 1000 120 1000 55\" stroke=\"%23b45309\" stroke-width=\"8\"/>\
-          <path d=\"M1000 55 c-20 -28 -55 -30 -80 -8 M1000 55 c24 -22 60 -20 85 6 M1000 55 c-2 -34 20 -56 52 -65 M1000 55 c2 -38 -20 -60 -50 -70\" stroke=\"%2310b981\" stroke-width=\"10\"/>\
-        </g>\
-      </svg>');
-    background-repeat:no-repeat; background-position:center bottom; background-size:cover;
-  }
+    .divider { height: 1px; background: linear-gradient(to right, transparent, #24242a, transparent); }
 
-  /* Section heading */
-  .hero{
-    text-align:center; margin:24px auto 10px;
-  }
-  .hero h1{margin:0 0 6px;font-size:clamp(28px,5vw,44px);font-weight:900}
-  .hero p{margin:0;color:#073b4c;font-weight:600}
+    .section { padding: 44px 0; }
+    .section h2 { margin: 0 0 8px; font-size: 28px; font-weight: 800; }
+    .section .lede { color: #9ca3af; font-size: 14px; }
 
-  /* Info card (center) */
-  .center-wrap{display:grid;place-items:center;margin:18px 0 6px}
-  .center-card{
-    width:min(860px,100%); background:var(--card); border:1px solid rgba(0,0,0,.08);
-    border-radius:16px; padding:16px 18px; box-shadow:0 12px 30px rgba(0,0,0,.12);
-  }
-  .center-card .title{
-    display:flex;align-items:center;justify-content:space-between;gap:10px;cursor:pointer;
-  }
-  .title h2{margin:0;font-size:20px}
-  .badge{background:#fff2; border:1px solid rgba(0,0,0,.08); border-radius:999px; padding:6px 10px; font-size:12px}
-  .expand{max-height:0; overflow:hidden; transition:max-height .35s ease}
-  .center-card.open .expand{max-height:400px;}
+    .grid {
+      margin-top: 20px;
+      display: grid; gap: 16px;
+      grid-template-columns: repeat(1, 1fr);
+    }
+    @media (min-width: 640px){ .grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px){ .grid { grid-template-columns: repeat(5, 1fr); } }
 
-  /* Grid of day cards */
-  .grid{
-    display:grid; gap:14px; margin:14px 0 0;
-    grid-template-columns: repeat(1,minmax(0,1fr));
-  }
-  @media (min-width:720px){ .grid{ grid-template-columns: repeat(3,1fr);} }
-  @media (min-width:1024px){ .grid{ grid-template-columns: repeat(5,1fr);} }
+    .card {
+      background: #141418; border: 1px solid #24242a; border-radius: 14px; padding: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    .card:hover {
+      transform: translateY(-3px); border-color: rgba(165,180,252,.35);
+      box-shadow: 0 16px 40px rgba(0,0,0,.45);
+    }
+    .card .day { color: #9ca3af; font-size: 11px; text-transform: uppercase; letter-spacing: .12em; margin-bottom: 6px; }
+    .card h3 { margin: 0 0 4px; font-size: 18px; }
+    .card p  { margin: 0; color: #9ca3af; font-size: 14px; }
 
-  .card{
-    background:var(--card); border:1px solid rgba(0,0,0,.08);
-    border-radius:16px; padding:14px 14px 10px; position:relative;
-    box-shadow:0 10px 24px rgba(0,0,0,.12);
-  }
-  .card .head{display:flex;align-items:center;justify-content:space-between;gap:10px; cursor:pointer}
-  .dow{display:inline-flex;align-items:center;gap:8px;font-weight:800}
-  .pill{font-size:12px;padding:4px 8px;border-radius:999px;color:#053b4c;font-weight:700}
-  .pill.sun{background:#fef08a}
-  .pill.sea{background:#a5f3fc}
-  .pill.fun{background:#bbf7d0}
-  .chev{transition:transform .25s ease}
-  .card.open .chev{transform:rotate(180deg)}
-  .details{max-height:0; overflow:hidden; transition:max-height .35s ease}
-  .card.open .details{max-height:420px}
-  .list{margin:10px 0 6px; padding-left:18px; color:var(--muted)}
-  .list li{margin:6px 0}
-
-  /* Button styles inside details */
-  .btn{
-    display:inline-block; margin-top:8px; background:linear-gradient(90deg, var(--deep), var(--sea));
-    color:#fff; border:none; border-radius:999px; padding:10px 14px; font-weight:700; text-decoration:none;
-    box-shadow:0 6px 18px rgba(14,165,233,.35);
-  }
-
-  /* Waves at horizon */
-  .waves{
-    position:fixed; left:0; right:0; bottom:180px; height:90px; z-index:-1; opacity:.65;
-    background:url('data:image/svg+xml;utf8,\
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox=\"0 0 1200 90\" preserveAspectRatio=\"none\">\
-      <path d=\"M0,30 C150,60 300,0 450,30 C600,60 750,0 900,30 C1050,60 1200,0 1200,0 L1200,90 L0,90 Z\" fill=\"%230ea5e9\"/>\
-      <path d=\"M0,50 C150,80 300,20 450,50 C600,80 750,20 900,50 C1050,80 1200,20 1200,20 L1200,90 L0,90 Z\" fill=\"%2322d3ee\"/>\
-    </svg>') center/cover no-repeat;
-  }
-
-  /* Motion safety */
-  @media (prefers-reduced-motion:reduce){
-    .details,.expand{transition:none}
-    .chev{transition:none}
-  }
-</style>
+    .footer { text-align: center; padding: 36px 0; color: #9ca3af; font-size: 12px; }
+  </style>
 </head>
 <body>
-<div class="sun"></div>
-<div class="waves"></div>
-<div class="palms"></div>
-
-<div class="container">
-
   <!-- Header -->
-  <div class="header">
+  <div class="container header">
     <div class="brand">
+      <!-- Replace this with your official wordmark image if you have it -->
+      <!-- <img src="lucid-wordmark.svg" alt="Lucid Motors" style="height:20px" /> -->
       <span class="wordmark">L U C I D</span>
-      <span style="opacity:.35">|</span>
-      <span style="font-weight:600">Customer Care</span>
+      <div class="rule"></div>
+      <span class="sub">Customer Care</span>
     </div>
     <div>
       <span class="chip">Customer Service Week</span>
-      <span class="chip">Oct 6–10, 2025</span>
+      <span class="chip" id="chip-date">Oct 6–10, 2025</span>
     </div>
   </div>
 
   <!-- Hero -->
-  <div class="hero">
-    <div>
-      <h1>Welcome to the Beach Board 🏖️</h1>
-      <p>Bright, colorful, and fun—your hub for Customer Service Week at Lucid Motors.</p>
+  <section class="hero">
+    <div class="container">
+      <h1>Customer Service Week</h1>
+      <p>Celebrating our everyday service heroes</p>
+
+      <div class="count" role="timer" aria-live="polite" aria-atomic="true">
+        <div class="countbox">
+          <div id="days"   class="k">00</div>
+          <div class="klab">Days</div>
+        </div>
+        <div class="countbox">
+          <div id="hours"  class="k">00</div>
+          <div class="klab">Hours</div>
+        </div>
+        <div class="countbox">
+          <div id="minutes" class="k">00</div>
+          <div class="klab">Minutes</div>
+        </div>
+        <div class="countbox">
+          <div id="seconds" class="k">00</div>
+          <div class="klab">Seconds</div>
+        </div>
+      </div>
+
+      <p id="countdown-helper" style="margin-top:8px;font-size:12px;color:#9ca3af;"></p>
     </div>
-  </div>
+  </section>
 
-  <!-- Center card: What is CS Week? -->
-  <div class="center-wrap">
-    <div class="center-card" id="about">
-      <div class="title" data-toggle="about">
-        <h2>What is Customer Service Week?</h2>
-        <span class="badge">Tap to expand</span>
+  <div class="divider"></div>
+
+  <!-- Week at a Glance -->
+  <section class="section">
+    <div class="container">
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap">
+        <h2>Week at a Glance</h2>
+        <div class="lede">Food • Games • Recognition • Prizes</div>
       </div>
-      <div class="expand">
-        <p style="margin:10px 0 0;color:var(--muted);line-height:1.55">
-          Customer Service Week began in the early 1990s to spotlight the essential work
-          of customer-facing teams across industries. It’s recognized during the first full
-          week of October and focuses on appreciation, education, and team connection.
-        </p>
-        <p style="margin:8px 0 0;color:var(--muted);line-height:1.55">
-          <strong>At Lucid Motors</strong>, this is our first official celebration. We’re honoring
-          our Customer Care heroes with daily experiences—food, games, shout-outs, and grand prizes—
-          designed to recharge, connect, and have fun together.
-        </p>
+
+      <div class="grid">
+        <article class="card">
+          <div class="day">Mon</div>
+          <h3>Mission Kickoff</h3>
+          <p>Fuel up and set the tone for the week.</p>
+        </article>
+        <article class="card">
+          <div class="day">Tue</div>
+          <h3>Test Your Powers</h3>
+          <p>Mini-challenges, leaderboards, prizes.</p>
+        </article>
+        <article class="card">
+          <div class="day">Wed</div>
+          <h3>Snack Attack</h3>
+          <p>Refuel with a curated snack spread.</p>
+        </article>
+        <article class="card">
+          <div class="day">Thu</div>
+          <h3>Team-Up Day</h3>
+          <p>Light team games. Collaboration > competition.</p>
+        </article>
+        <article class="card">
+          <div class="day">Fri</div>
+          <h3>Victory Celebration</h3>
+          <p>Recognition, grand prizes, and a clean finish.</p>
+        </article>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Day Cards -->
-  <div class="grid" id="days">
-    <!-- MON -->
-    <article class="card">
-      <div class="head" data-toggle>
-        <div class="dow">🌞 <span>Monday</span></div>
-        <div class="pill sun">Kickoff</div>
-        <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b1220" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-      </div>
-      <div class="details">
-        <ul class="list">
-          <li>8:45a — Welcome donuts & iced coffee on the “boardwalk”</li>
-          <li>9:15a — Opening remarks + this week’s passport handout</li>
-          <li>All day — Photo booth with palm props 🌴</li>
-        </ul>
-        <a class="btn" href="#" aria-label="See Monday full schedule">View Monday schedule</a>
-      </div>
-    </article>
+  <div class="divider"></div>
 
-    <!-- TUE -->
-    <article class="card">
-      <div class="head" data-toggle>
-        <div class="dow">🌊 <span>Tuesday</span></div>
-        <div class="pill sea">Games</div>
-        <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b1220" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-      </div>
-      <div class="details">
-        <ul class="list">
-          <li>11:30a — “Sandcastle” leaderboard challenge (mini-quizzes)</li>
-          <li>2:00p — Rapid-fire case hacks: share a 60-second tip</li>
-          <li>Prizes — Beach towels, water bottles, gift cards</li>
-        </ul>
-        <a class="btn" href="#" aria-label="See Tuesday full schedule">View Tuesday schedule</a>
-      </div>
-    </article>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      &copy; 2025 Lucid Motors Customer Care. All rights reserved.
+    </div>
+  </footer>
 
-    <!-- WED -->
-    <article class="card">
-      <div class="head" data-toggle>
-        <div class="dow">🍍 <span>Wednesday</span></div>
-        <div class="pill fun">Snacks</div>
-        <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b1220" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-      </div>
-      <div class="details">
-        <ul class="list">
-          <li>12:00p — Tropical snack bar (pineapple, mango, trail mix, sparkling water)</li>
-          <li>2:30p — “Best Beach Playlist” share-and-vote 🎶</li>
-          <li>All day — Post a gratitude note to a teammate wall</li>
-        </ul>
-        <a class="btn" href="#" aria-label="See Wednesday full schedule">View Wednesday schedule</a>
-      </div>
-    </article>
+  <!-- Countdown (plain JS) -->
+  <script>
+    (function(){
+      var target = new Date("Oct 6, 2025 00:00:00").getTime();
+      var daysEl = document.getElementById("days");
+      var hoursEl = document.getElementById("hours");
+      var minutesEl = document.getElementById("minutes");
+      var secondsEl = document.getElementById("seconds");
+      var helper = document.getElementById("countdown-helper");
 
-    <!-- THU -->
-    <article class="card">
-      <div class="head" data-toggle>
-        <div class="dow">🏝️ <span>Thursday</span></div>
-        <div class="pill sea">Team-Up</div>
-        <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b1220" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-      </div>
-      <div class="details">
-        <ul class="list">
-          <li>10:00a — Mini team relays (ticket triage, macro mastery, empathy speed-rounds)</li>
-          <li>3:00p — Cross-team beach ball stand-up (fast wins & shout-outs)</li>
-          <li>Prize multipliers for collaboration badges</li>
-        </ul>
-        <a class="btn" href="#" aria-label="See Thursday full schedule">View Thursday schedule</a>
-      </div>
-    </article>
+      function pad(n){ return n < 10 ? "0"+n : String(n); }
 
-    <!-- FRI -->
-    <article class="card">
-      <div class="head" data-toggle>
-        <div class="dow">🎉 <span>Friday</span></div>
-        <div class="pill sun">Celebrate</div>
-        <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b1220" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-      </div>
-      <div class="details">
-        <ul class="list">
-          <li>12:00p — Luau-style lunch</li>
-          <li>1:30p — Recognition & awards (Peak Performers, MVP, Spirit Award)</li>
-          <li>Grand prizes + group photo</li>
-        </ul>
-        <a class="btn" href="#" aria-label="See Friday full schedule">View Friday schedule</a>
-      </div>
-    </article>
-  </div>
-</div>
+      function tick(){
+        var now = Date.now();
+        var diff = target - now;
 
-<script>
-  // Expand/collapse for center card and day cards
-  document.querySelectorAll('[data-toggle]').forEach(el=>{
-    el.addEventListener('click',()=>{
-      const parent = el.closest('.card') || document.getElementById('about');
-      parent.classList.toggle('open');
-    });
-  });
-  document.querySelector('[data-toggle="about"]').addEventListener('click',()=>{
-    document.getElementById('about').classList.toggle('open');
-  });
-</script>
+        if (diff <= 0){
+          daysEl.textContent = hoursEl.textContent = minutesEl.textContent = secondsEl.textContent = "00";
+          helper.textContent = "The celebration has begun!";
+          clearInterval(timer);
+          return;
+        }
+
+        var d = Math.floor(diff / (1000*60*60*24));
+        var h = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+        var m = Math.floor((diff % (1000*60*60)) / (1000*60));
+        var s = Math.floor((diff % (1000*60)) / 1000);
+
+        daysEl.textContent = pad(d);
+        hoursEl.textContent = pad(h);
+        minutesEl.textContent = pad(m);
+        secondsEl.textContent = pad(s);
+
+        var date = new Date(target);
+        helper.textContent = "Countdown to " + date.toLocaleDateString(undefined, { weekday:'short', month:'short', day:'numeric' });
+      }
+
+      var timer = setInterval(tick, 1000);
+      tick();
+    })();
+  </script>
 </body>
 </html>
