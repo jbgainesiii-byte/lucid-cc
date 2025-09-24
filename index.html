@@ -1,219 +1,295 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lucid Customer Care — Customer Service Week 2025</title>
-  <style>
-    /* === Minimal, dependency-free styles === */
-    html, body { height: 100%; }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      background: #0b0b0d; /* near-black */
-      color: #f5f7fa;      /* off-white */
-    }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-    .header {
-      border-bottom: 1px solid #24242a;
-      padding: 14px 0;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .brand { display: flex; align-items: center; gap: 12px; }
-    .wordmark { letter-spacing: .38em; font-weight: 700; font-size: 12px; }
-    .rule { width: 1px; height: 16px; background: #24242a; }
-    .sub { color: #9ca3af; font-size: 12px; }
-    .chip {
-      display: inline-block; border: 1px solid #24242a; border-radius: 999px;
-      padding: 6px 10px; color: #9ca3af; font-size: 12px;
-    }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Customer Service Week — Beach Board</title>
+<style>
+  :root{
+    --sky:#7dd3fc; --sea:#22d3ee; --deep:#0ea5e9; --sand:#fde68a; --sun:#facc15;
+    --ink:#0b1220; --card:#ffffff; --muted:#475569;
+    --pink:#fb7185; --purple:#a78bfa; --green:#10b981; --orange:#fb923c;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    color:var(--ink);
+    background: radial-gradient(900px 600px at 80% -10%,rgba(255,255,255,.45) 0%,rgba(255,255,255,0) 65%),
+      linear-gradient(180deg,var(--sky) 0%,#bde6ff 35%,var(--sea) 70%,var(--sand) 100%);
+    overflow-x:hidden;
+  }
+  .container{max-width:1200px;margin:0 auto;padding:16px 20px 120px}
 
-    .hero {
-      text-align: center;
-      padding: 72px 0 64px;
-      background:
-        radial-gradient(1000px 600px at 80% -20%, rgba(165,180,252,.12) 0%, rgba(165,180,252,0) 60%),
-        linear-gradient(to bottom, rgba(11,11,13,0) 0%, rgba(11,11,13,.75) 60%, rgba(11,11,13,1) 100%);
-      /* This ensures content is ALWAYS visible even if gradients fail */
-      min-height: 60vh; display: flex; align-items: center; justify-content: center;
-    }
-    .hero h1 { margin: 0 0 8px; font-size: clamp(32px, 6vw, 56px); font-weight: 900; }
-    .hero p { margin: 0; color: #9ca3af; font-size: 18px; }
+  /* Header */
+  .header{display:flex;align-items:center;justify-content:space-between;gap:12px;
+    padding:10px 14px;margin:8px auto 12px;background:rgba(255,255,255,.55);
+    backdrop-filter:saturate(140%) blur(6px); border-radius:14px; border:1px solid rgba(0,0,0,.06)}
+  .wordmark{letter-spacing:.35em;font-weight:800;font-size:14px}
+  .chip{font-size:12px;border:1px solid rgba(0,0,0,.1);padding:6px 10px;border-radius:999px;background:#fff}
 
-    .count { margin-top: 28px; display: inline-flex; gap: 12px; }
-    .countbox {
-      background: rgba(255,255,255,.03);
-      border: 1px solid #24242a;
-      border-radius: 12px;
-      min-width: 84px; padding: 12px 10px; text-align: center;
-    }
-    .k    { font-weight: 800; font-size: clamp(24px, 4vw, 40px); line-height: 1; }
-    .klab { margin-top: 4px; color: #9ca3af; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+  /* Beach art */
+  .sun{position:fixed;right:6vw;top:4vh;width:120px;height:120px;border-radius:50%;
+    background:radial-gradient(circle at 35% 35%,#fff 0 20%,var(--sun) 21% 70%,#f59e0b 71% 100%);
+    box-shadow:0 0 80px 20px rgba(250,204,21,.45);z-index:-1;}
+  .waves{position:fixed;left:0;right:0;bottom:180px;height:90px;z-index:-1;opacity:.65;
+    background:url('data:image/svg+xml;utf8,\
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 90" preserveAspectRatio="none">\
+      <path d="M0,30 C150,60 300,0 450,30 C600,60 750,0 900,30 C1050,60 1200,0 1200,0 L1200,90 L0,90 Z" fill="%230ea5e9"/>\
+      <path d="M0,50 C150,80 300,20 450,50 C600,80 750,20 900,50 C1050,80 1200,20 1200,20 L1200,90 L0,90 Z" fill="%2322d3ee"/>\
+    </svg>') center/cover no-repeat;}
+  .palms{position:fixed;left:0;bottom:0;width:100%;height:200px;pointer-events:none;z-index:-1;
+    background:linear-gradient(to top,rgba(253,230,138,1) 0%,rgba(253,230,138,0) 70%),
+    url('data:image/svg+xml;utf8,\
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 200">\
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">\
+        <path d="M150 200 C170 150 170 120 170 60" stroke="%23b45309" stroke-width="8"/>\
+        <path d="M170 60 c-20 -30 -60 -35 -85 -10 M170 60 c25 -25 65 -22 90 5 M170 60 c-5 -35 20 -60 55 -70 M170 60 c0 -40 -25 -65 -55 -75" stroke="%2310b981" stroke-width="10"/>\
+        <path d="M980 200 C1000 150 1000 120 1000 55" stroke="%23b45309" stroke-width="8"/>\
+        <path d="M1000 55 c-20 -28 -55 -30 -80 -8 M1000 55 c24 -22 60 -20 85 6 M1000 55 c-2 -34 20 -56 52 -65 M1000 55 c2 -38 -20 -60 -50 -70" stroke="%2310b981" stroke-width="10"/>\
+      </g></svg>');background-repeat:no-repeat;background-position:center bottom;background-size:cover;}
 
-    .divider { height: 1px; background: linear-gradient(to right, transparent, #24242a, transparent); }
+  /* Hero + countdown */
+  .hero{text-align:center;margin:22px auto 8px;}
+  .title{font-weight:900;line-height:1.05;font-size:clamp(34px,6.8vw,66px);
+    background:conic-gradient(from 90deg,#fff 0 10%,var(--pink) 10% 35%,var(--purple) 35% 60%,var(--green) 60% 80%,var(--orange) 80% 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 2px 18px rgba(255,255,255,.35);}
+  .subtitle{margin-top:6px;color:#073b4c;font-weight:700}
+  .count{margin:16px auto 0;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
+  .countbox{background:rgba(255,255,255,.75);border:1px solid rgba(0,0,0,.08);border-radius:14px;
+    min-width:92px;padding:10px 12px;text-align:center;box-shadow:0 6px 16px rgba(14,165,233,.25);}
+  .k{font-weight:900;font-size:clamp(22px,4.2vw,36px);line-height:1}
+  .klab{margin-top:4px;color:#0b1220aa;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
 
-    .section { padding: 44px 0; }
-    .section h2 { margin: 0 0 8px; font-size: 28px; font-weight: 800; }
-    .section .lede { color: #9ca3af; font-size: 14px; }
+  /* Center info card */
+  .center-wrap{display:grid;place-items:center;margin:18px 0 6px}
+  .center-card{width:min(860px,100%);background:var(--card);border:1px solid rgba(0,0,0,.08);
+    border-radius:16px;padding:16px 18px;box-shadow:0 12px 30px rgba(0,0,0,.12);}
+  .center-card .title-row{display:flex;align-items:center;justify-content:space-between;gap:10px;cursor:pointer}
+  .badge{background:#fff2;border:1px solid rgba(0,0,0,.08);border-radius:999px;padding:6px 10px;font-size:12px}
+  .expand{max-height:0;overflow:hidden;transition:max-height .35s ease}
+  .center-card.open .expand{max-height:420px}
 
-    .grid {
-      margin-top: 20px;
-      display: grid; gap: 16px;
-      grid-template-columns: repeat(1, 1fr);
-    }
-    @media (min-width: 640px){ .grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (min-width: 1024px){ .grid { grid-template-columns: repeat(5, 1fr); } }
+  /* Day cards */
+  .grid{display:grid;gap:14px;margin:14px 0 0;grid-template-columns:repeat(1,minmax(0,1fr));}
+  @media (min-width:720px){.grid{grid-template-columns:repeat(3,1fr);}}
+  @media (min-width:1024px){.grid{grid-template-columns:repeat(5,1fr);}}
+  .card{background:var(--card);border:1px solid rgba(0,0,0,.08);border-radius:16px;padding:14px;
+    box-shadow:0 10px 24px rgba(0,0,0,.12);}
+  .head{display:flex;align-items:center;justify-content:space-between;gap:10px;cursor:pointer}
+  .dow{display:inline-flex;align-items:center;gap:8px;font-weight:900}
+  .pill{font-size:12px;padding:5px 9px;border-radius:999px;color:#053b4c;font-weight:800}
+  .pill.pink{background:#fecdd3}.pill.sea{background:#a5f3fc}.pill.green{background:#bbf7d0}.pill.orange{background:#fed7aa}
+  .chev{transition:transform .25s ease}.card.open .chev{transform:rotate(180deg)}
+  .details{max-height:0;overflow:hidden;transition:max-height .35s ease}
+  .card.open .details{max-height:420px}
+  .list{margin:10px 0 6px;padding-left:18px;color:var(--muted)}.list li{margin:6px 0}
+  .btn{display:inline-block;margin-top:8px;background:linear-gradient(90deg,var(--deep),var(--sea));
+    color:#fff;border:none;border-radius:999px;padding:10px 14px;font-weight:800;text-decoration:none;
+    box-shadow:0 6px 18px rgba(14,165,233,.35);}
 
-    .card {
-      background: #141418; border: 1px solid #24242a; border-radius: 14px; padding: 18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.35);
-      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
-    }
-    .card:hover {
-      transform: translateY(-3px); border-color: rgba(165,180,252,.35);
-      box-shadow: 0 16px 40px rgba(0,0,0,.45);
-    }
-    .card .day { color: #9ca3af; font-size: 11px; text-transform: uppercase; letter-spacing: .12em; margin-bottom: 6px; }
-    .card h3 { margin: 0 0 4px; font-size: 18px; }
-    .card p  { margin: 0; color: #9ca3af; font-size: 14px; }
-
-    .footer { text-align: center; padding: 36px 0; color: #9ca3af; font-size: 12px; }
-  </style>
+  /* Palm Spotlight (names) */
+  .spotlight-section{margin:40px auto 8px;max-width:1200px;padding:0 20px;}
+  .spotlight-title{margin:0 0 12px;text-align:center;font-weight:900;font-size:28px;
+    background:linear-gradient(90deg,#f59e0b,#ef4444,#a78bfa,#10b981,#22d3ee);
+    -webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 1px 8px rgba(255,255,255,.35);}
+  .name-grid{display:grid;gap:10px;grid-template-columns:repeat(2,minmax(0,1fr));}
+  @media (min-width:640px){.name-grid{grid-template-columns:repeat(4,1fr);}}
+  @media (min-width:1024px){.name-grid{grid-template-columns:repeat(6,1fr);}}
+  .name-chip{background:#fff;color:#053b4c;border:1px solid rgba(0,0,0,.08);
+    border-radius:999px;padding:10px 12px;text-align:center;font-weight:800;font-size:14px;
+    box-shadow:0 6px 14px rgba(14,165,233,.18);
+    transition:transform .25s ease,box-shadow .25s ease,background .25s ease}
+  .name-chip.is-hot{transform:translateY(-2px) scale(1.04);
+    background:linear-gradient(90deg,#fef08a,#a5f3fc);
+    box-shadow:0 10px 24px rgba(14,165,233,.35);}
+</style>
 </head>
 <body>
+<div class="sun"></div><div class="waves"></div><div class="palms"></div>
+
+<div class="container">
   <!-- Header -->
-  <div class="container header">
-    <div class="brand">
-      <!-- Replace this with your official wordmark image if you have it -->
-      <!-- <img src="lucid-wordmark.svg" alt="Lucid Motors" style="height:20px" /> -->
-      <span class="wordmark">L U C I D</span>
-      <div class="rule"></div>
-      <span class="sub">Customer Care</span>
-    </div>
+  <div class="header">
+    <div class="brand"><span class="wordmark">L U C I D</span><span style="opacity:.35">|</span><span style="font-weight:700">Customer Care</span></div>
+    <div><span class="chip">Customer Service Week</span><span class="chip">Oct 6–10, 2025</span></div>
+  </div>
+
+  <!-- Hero + countdown -->
+  <div class="hero">
     <div>
-      <span class="chip">Customer Service Week</span>
-      <span class="chip" id="chip-date">Oct 6–10, 2025</span>
+      <div class="title">CUSTOMER SERVICE WEEK</div>
+      <div class="subtitle">First Annual • Bright • Beachy • Fun</div>
+      <div class="count" role="timer" aria-live="polite" aria-atomic="true">
+        <div class="countbox"><div id="days" class="k">00</div><div class="klab">Days</div></div>
+        <div class="countbox"><div id="hours" class="k">00</div><div class="klab">Hours</div></div>
+        <div class="countbox"><div id="minutes" class="k">00</div><div class="klab">Minutes</div></div>
+        <div class="countbox"><div id="seconds" class="k">00</div><div class="klab">Seconds</div></div>
+      </div>
+      <div id="countdown-helper" style="margin-top:8px;font-size:12px;color:#0b1220aa;"></div>
     </div>
   </div>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container">
-      <h1>Customer Service Week</h1>
-      <p>Celebrating our everyday service heroes</p>
-
-      <div class="count" role="timer" aria-live="polite" aria-atomic="true">
-        <div class="countbox">
-          <div id="days"   class="k">00</div>
-          <div class="klab">Days</div>
-        </div>
-        <div class="countbox">
-          <div id="hours"  class="k">00</div>
-          <div class="klab">Hours</div>
-        </div>
-        <div class="countbox">
-          <div id="minutes" class="k">00</div>
-          <div class="klab">Minutes</div>
-        </div>
-        <div class="countbox">
-          <div id="seconds" class="k">00</div>
-          <div class="klab">Seconds</div>
-        </div>
+  <!-- Center info -->
+  <div class="center-wrap">
+    <div class="center-card" id="about">
+      <div class="title-row" data-toggle="about">
+        <h2 style="margin:0">What is Customer Service Week?</h2>
+        <span class="badge">Tap to expand</span>
       </div>
-
-      <p id="countdown-helper" style="margin-top:8px;font-size:12px;color:#9ca3af;"></p>
+      <div class="expand">
+        <p style="margin:10px 0 0;color:var(--muted);line-height:1.55">
+          Customer Service Week started in the early ’90s to spotlight the essential work of customer-facing teams.
+          It’s held the first full week of October and centers on appreciation, education, and team connection.
+        </p>
+        <p style="margin:8px 0 0;color:var(--muted);line-height:1.55">
+          <strong>At Lucid Motors</strong>, we’re celebrating our first CS Week with daily experiences—food, games, shout-outs,
+          and grand prizes—designed to recharge, connect, and have fun together.
+        </p>
+      </div>
     </div>
+  </div>
+
+  <!-- Day Cards -->
+  <section class="grid">
+    <!-- Monday -->
+    <article class="card">
+      <div class="head" data-toggle>
+        <div class="dow">🏖️ <span>Monday</span></div>
+        <div class="pill pink">Pajama Monday</div>
+        <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b1220" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </div>
+      <div class="details">
+        <h4 style="margin:10px 0 4px">Sandy Snooze Vibes</h4>
+        <ul class="list">
+          <li>Wear your coziest PJs—tropical prints, fuzzy slippers, beach hats welcome.</li>
+          <li>Start the week relaxed, refreshed, and cabana-calm.</li>
+          <li>Morning treats: donuts & iced coffee on the boardwalk.</li>
+        </ul>
+        <a class="btn" href="#">View Monday schedule</a>
+      </div>
+    </article>
+
+    <!-- Tuesday -->
+    <article class="card">
+      <div class="head" data-toggle>
+        <div class="dow">🌴 <span>Tuesday</span></div>
+        <div class="pill sea">Team Tuesday</div>
+        <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b1220" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </div>
+      <div class="details">
+        <h4 style="margin:10px 0 4px">Beach League Spirit</h4>
+        <ul class="list">
+          <li>Rep your favorite team—jerseys, hats, or a beachy twist on colors.</li>
+          <li>Rapid-fire case hacks: share a 60-second tip.</li>
+          <li>Prizes: towels, bottles, gift cards.</li>
+        </ul>
+        <a class="btn" href="#">View Tuesday schedule</a>
+      </div>
+    </article>
+
+    <!-- Wednesday -->
+    <article class="card">
+      <div class="head" data-toggle>
+        <div class="dow">🌊 <span>Wednesday</span></div>
+        <div class="pill green">Wacky Wednesday</div>
+        <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b1220" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </div>
+      <div class="details">
+        <h4 style="margin:10px 0 4px">Catch the Crazy Waves</h4>
+        <ul class="list">
+          <li>Go off-the-wall with outfits and goofy vibes—make a splash.</li>
+          <li>Tropical snack bar: pineapple, mango, sparkling water.</li>
+          <li>Post a gratitude note to the teammate wall.</li>
+        </ul>
+        <a class="btn" href="#">View Wednesday schedule</a>
+      </div>
+    </article>
+
+    <!-- Thursday -->
+    <article class="card">
+      <div class="head" data-toggle>
+        <div class="dow">🏝️ <span>Thursday</span></div>
+        <div class="pill orange">Throwback Thursday</div>
+        <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b1220" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </div>
+      <div class="details">
+        <h4 style="margin:10px 0 4px">Decades Day</h4>
+        <ul class="list">
+          <li>Rock your favorite era—70s grooves, 80s neon, 90s chill, 2000s vibes.</li>
+          <li>Cross-team beach-ball stand-up: quick wins & shout-outs.</li>
+        </ul>
+        <a class="btn" href="#">View Thursday schedule</a>
+      </div>
+    </article>
+
+    <!-- Friday -->
+    <article class="card">
+      <div class="head" data-toggle>
+        <div class="dow">🎉 <span>Friday</span></div>
+        <div class="pill green">Finale & Awards</div>
+        <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b1220" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </div>
+      <div class="details">
+        <h4 style="margin:10px 0 4px">Celebrate Together</h4>
+        <ul class="list">
+          <li>Luau-style lunch + group photo.</li>
+          <li>Recognition & awards: Peak Performers, MVP, Spirit Award.</li>
+          <li>Grand prizes & good vibes to close the week.</li>
+        </ul>
+        <a class="btn" href="#">View Friday schedule</a>
+      </div>
+    </article>
   </section>
 
-  <div class="divider"></div>
-
-  <!-- Week at a Glance -->
-  <section class="section">
-    <div class="container">
-      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap">
-        <h2>Week at a Glance</h2>
-        <div class="lede">Food • Games • Recognition • Prizes</div>
-      </div>
-
-      <div class="grid">
-        <article class="card">
-          <div class="day">Mon</div>
-          <h3>Mission Kickoff</h3>
-          <p>Fuel up and set the tone for the week.</p>
-        </article>
-        <article class="card">
-          <div class="day">Tue</div>
-          <h3>Test Your Powers</h3>
-          <p>Mini-challenges, leaderboards, prizes.</p>
-        </article>
-        <article class="card">
-          <div class="day">Wed</div>
-          <h3>Snack Attack</h3>
-          <p>Refuel with a curated snack spread.</p>
-        </article>
-        <article class="card">
-          <div class="day">Thu</div>
-          <h3>Team-Up Day</h3>
-          <p>Light team games. Collaboration > competition.</p>
-        </article>
-        <article class="card">
-          <div class="day">Fri</div>
-          <h3>Victory Celebration</h3>
-          <p>Recognition, grand prizes, and a clean finish.</p>
-        </article>
-      </div>
-    </div>
+  <!-- Palm Spotlight -->
+  <section id="spotlight" class="spotlight-section">
+    <h2 class="spotlight-title">Team Spotlight</h2>
+    <div id="nameGrid" class="name-grid" aria-live="polite"></div>
   </section>
+</div>
 
-  <div class="divider"></div>
+<script>
+  // Countdown
+  (function(){
+    var target=new Date("Oct 6, 2025 00:00:00").getTime();
+    var d=document.getElementById("days"),h=document.getElementById("hours"),
+        m=document.getElementById("minutes"),s=document.getElementById("seconds"),
+        helper=document.getElementById("countdown-helper");
+    function pad(n){return n<10?"0"+n:n}
+    function tick(){
+      var now=Date.now(),diff=target-now;
+      if(diff<=0){d.textContent=h.textContent=m.textContent=s.textContent="00";helper.textContent="The celebration has begun!";clearInterval(timer);return}
+      d.textContent=pad(Math.floor(diff/(1000*60*60*24)));
+      h.textContent=pad(Math.floor((diff%(1000*60*60*24))/(1000*60*60)));
+      m.textContent=pad(Math.floor((diff%(1000*60*60))/(1000*60)));
+      s.textContent=pad(Math.floor((diff%(1000*60))/1000));
+      helper.textContent="Countdown to "+new Date(target).toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric'});
+    }
+    var timer=setInterval(tick,1000);tick();
+  })();
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      &copy; 2025 Lucid Motors Customer Care. All rights reserved.
-    </div>
-  </footer>
+  // Expand/collapse
+  document.querySelectorAll('[data-toggle]').forEach(el=>{
+    el.addEventListener('click',()=>{const p=el.closest('.card')||document.getElementById('about');p.classList.toggle('open');});
+  });
+  document.querySelector('[data-toggle="about"]').addEventListener('click',()=>{
+    document.getElementById('about').classList.toggle('open');
+  });
 
-  <!-- Countdown (plain JS) -->
-  <script>
-    (function(){
-      var target = new Date("Oct 6, 2025 00:00:00").getTime();
-      var daysEl = document.getElementById("days");
-      var hoursEl = document.getElementById("hours");
-      var minutesEl = document.getElementById("minutes");
-      var secondsEl = document.getElementById("seconds");
-      var helper = document.getElementById("countdown-helper");
-
-      function pad(n){ return n < 10 ? "0"+n : String(n); }
-
-      function tick(){
-        var now = Date.now();
-        var diff = target - now;
-
-        if (diff <= 0){
-          daysEl.textContent = hoursEl.textContent = minutesEl.textContent = secondsEl.textContent = "00";
-          helper.textContent = "The celebration has begun!";
-          clearInterval(timer);
-          return;
-        }
-
-        var d = Math.floor(diff / (1000*60*60*24));
-        var h = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
-        var m = Math.floor((diff % (1000*60*60)) / (1000*60));
-        var s = Math.floor((diff % (1000*60)) / 1000);
-
-        daysEl.textContent = pad(d);
-        hoursEl.textContent = pad(h);
-        minutesEl.textContent = pad(m);
-        secondsEl.textContent = pad(s);
-
-        var date = new Date(target);
-        helper.textContent = "Countdown to " + date.toLocaleDateString(undefined, { weekday:'short', month:'short', day:'numeric' });
-      }
-
-      var timer = setInterval(tick, 1000);
-      tick();
-    })();
-  </script>
+  // Palm Spotlight names (First Last), excluding Patrick Hart
+  const PEOPLE=[
+    "Marquise Adeleye","Jay Arevalo","Anthony Bastone","Nader Bazzi","Omari Billingsley",
+    "Shakera Bland","Joeyi Chiang","Jasmine Christian","Mya Clark","JaVonte Gordy-Pulliam",
+    "James Hultz","Ashli Hunter","Jaylen Hunter","Daniel Kirk","Aaron Klenke",
+    "Nik Nippa","Aline Ntumba","Jeromy Porter","Phil Romo","Justin Schoeneman",
+    "Derrick-Anthony Stallings","Daniel Yaquinto"
+  ];
+  const grid=document.getElementById('nameGrid');
+  const chips=PEOPLE.map(n=>{const el=document.createElement('div');el.className='name-chip';el.textContent=n;grid.appendChild(el);return el});
+  let i=0,rot;function rotate(){chips.forEach(c=>c.classList.remove('is-hot')); if(chips.length){chips[i].classList.add('is-hot');} i=(i+1)%chips.length;}
+  function start(){rotate();rot=setInterval(rotate,2500);} function stop(){clearInterval(rot);}
+  const reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduced){chips.forEach(c=>c.classList.add('is-hot'));}else{start();grid.addEventListener('mouseenter',stop);grid.addEventListener('mouseleave',start);}
+</script>
 </body>
 </html>
